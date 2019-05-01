@@ -30,7 +30,8 @@ public class Encryptor
         }
         if (bool2 = true) {    
             System.out.print("How many letters do you want to shift? ");
-            x = scanXD.nextDouble();
+            Scanner scanXD3 = new Scanner(System.in);
+            x = scanXD3.nextDouble();
         }
         else {
             x = getRandomInt(1,25);
@@ -44,10 +45,12 @@ public class Encryptor
             cipher = ""; //initializes cipher
             if (xd <= 'z' && xd >= 'a') {
                 int z = (int)xd-'a'+1;
+                char nowThatsHowGamersDoIt = (char)z;
                 cipher += z;
             }
-            if (xd <= 'Z' && xd >='A'){
+            if (xd <= 'Z' && xd >= 'A'){
                 int gamersRiseUpInTheClub = (int)xd-'A'+1;
+                char gamer = (char)gamersRiseUpInTheClub;
                 cipher += gamersRiseUpInTheClub;
             }
             else {
@@ -55,6 +58,7 @@ public class Encryptor
             }
             gamerz = cipher;
         }
+        //please work
         System.out.println(gamerz);
     }
 
