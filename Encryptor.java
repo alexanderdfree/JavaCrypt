@@ -14,19 +14,19 @@ public class Encryptor
     public Encryptor()
     {
         Scanner scanXD = new Scanner(System.in);
-        System.out.print("Which message would you like to encrypt?");
+        System.out.print("Which message would you like to encrypt? ");
         String plaintext = scanXD.nextLine();
-        System.out.print("Would you like to choose your own key?");
+        System.out.print("Would you like to choose your own key ?");
         String bool1 = scanXD.nextLine();
         double x;
-        if (bool1 == "yes" || bool1 == "Yes") {
-            System.out.print("How many letters do you want to shift?");
+        if (bool1 == "yes" | bool1 == "Yes") {
+            System.out.print("How many letters do you want to shift? ");
             x = scanXD.nextInt();
     }
         else{
         x = getRandomInt(1,26);
     }
-        System.out.println("Your code shift is +" + x + ".");
+        System.out.println("Your code shift is + " + x + ".");
         for (int i = 0; i < plaintext.length(); i++) {
             
         }
