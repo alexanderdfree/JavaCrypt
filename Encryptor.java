@@ -22,7 +22,7 @@ public class Encryptor
         pseudobool = scanXD2.nextLine();
         double x;
         boolean bool2;
-        if (pseudobool == "Yes" || pseudobool == "yes") {
+        if (pseudobool == "Yes" || pseudobool == "yes") { //
             bool2 = true;
         }
         else{
