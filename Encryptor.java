@@ -37,8 +37,13 @@ public class Encryptor
         }
         double y = 26 - x;
         System.out.println("Your code shift is +" + x + ", or -" + y + ".");
-        for (int i = 0; i < plaintext.length(); i++) {
-            //charAt[];
+        for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
+            char xd = plaintext.charAt(riseUp);
+            String cipher;
+            if (xd <= 'z') {
+                xd = (char)(xd + x);
+            }
+            
         }
     }
 
