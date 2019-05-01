@@ -1,33 +1,35 @@
-
+import java.util.Scanner;
 /**
- * Write a description of class Encryptor here.
- *
- * @author (your name)
- * @version (a version number or a date)
+
+ * @author Alex
+ * @version 12.0.1
  */
 public class Encryptor
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    public double getRandomInt(double min, double max) { //code credit to mozilla and edited by alex
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; }
 
-    /**
-     * Constructor for objects of class Encryptor
-     */
     public Encryptor()
     {
-        // initialise instance variables
-        x = 0;
+        Scanner scanXD = new Scanner(System.in);
+        System.out.print("Which message would you like to encrypt?");
+        String plaintext = scanXD.nextLine();
+        System.out.print("Would you like to choose your own key?");
+        String bool1 = scanXD.nextLine();
+        double x;
+        if (bool1 == "yes" || bool1 == "Yes") {
+            System.out.print("How many letters do you want to shift?");
+            x = scanXD.nextInt();
+    }
+        else{
+        x = getRandomInt(1,26);
+    }
+        System.out.println("Your code shift is +" + x + ".");
+        for (int i = 0; i < plaintext.length(); i++) {
+            
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }
