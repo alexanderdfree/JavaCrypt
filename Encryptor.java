@@ -17,9 +17,9 @@ public class Encryptor
         System.out.print("Which message would you like to encrypt? ");
         String plaintext = scanXD.nextLine();
         System.out.print("Would you like to choose your own key? ");
-        String pseudobool = scanXD.nextLine();
+        boolean pseudobool = scanXD.nextBoolean();
         double x;
-        if (pseudobool == "yes" | pseudobool == "Yes") {
+        if (pseudobool == true) {
             System.out.print("How many letters do you want to shift? ");
             x = scanXD.nextInt();
         }
