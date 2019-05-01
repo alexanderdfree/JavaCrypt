@@ -39,11 +39,14 @@ public class Encryptor
         System.out.println("Your code shift is +" + x + ", or -" + y + ".");
         for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
             char xd = plaintext.charAt(riseUp);
-            String cipher;
+            String cipher = "";
             if (xd <= 'z') {
                 xd = (char)(xd + x);
+                cipher += xd;
             }
-            
+            else {
+               cipher += xd; 
+            }
         }
     }
 
