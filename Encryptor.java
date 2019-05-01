@@ -18,18 +18,26 @@ public class Encryptor
         String plaintext = scanXD.nextLine();
         System.out.print("Would you like to choose your own key? ");
         String pseudobool = null;
-        pseudobool = scanXD.nextLine();
+        Scanner scanXD2 = new Scanner(System.in);
+        pseudobool = scanXD2.nextLine();
         double x;
+        boolean bool2;
         if (pseudobool == "Yes" || pseudobool == "yes") {
+            bool2 = true;
+        }
+        else{
+            bool2 = false;
+        }
+        if (bool2 = true) {    
             System.out.print("How many letters do you want to shift? ");
             x = scanXD.nextDouble();
         }
         else {
-            x = getRandomInt(1,26);
+            x = getRandomInt(1,25);
         }
         System.out.println("Your code shift is + " + x + ".");
         for (int i = 0; i < plaintext.length(); i++) {
-            
+            //charAt[];
         }
     }
 
