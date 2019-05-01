@@ -35,7 +35,8 @@ public class Encryptor
         else {
             x = getRandomInt(1,25);
         }
-        System.out.println("Your code shift is + " + x + ".");
+        double y = 26 - x;
+        System.out.println("Your code shift is +" + x + ", or -" + y + ".");
         for (int i = 0; i < plaintext.length(); i++) {
             //charAt[];
         }
