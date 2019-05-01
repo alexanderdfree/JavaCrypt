@@ -42,11 +42,14 @@ public class Encryptor
         for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
             char xd = plaintext.charAt(riseUp);
             cipher = ""; //initializes cipher
-            if (xd <= 'z') {
-                xd = (char)(xd + x);
-                cipher += xd;
+            if (xd <= 'z' && xd >= 'a') {
+                int z = (int)xd-'a'+1;
+                cipher += z;
             }
-            
+            if (xd <= 'Z' && xd >='A'){
+                int gamersRiseUpInTheClub = (int)xd-'A'+1;
+                cipher += gamersRiseUpInTheClub;
+            }
             else {
                cipher += xd; 
             }
