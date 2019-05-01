@@ -21,7 +21,7 @@ public class Encryptor
         double x;
         if (pseudobool == true) {
             System.out.print("How many letters do you want to shift? ");
-            x = scanXD.nextInt();
+            x = scanXD.nextDouble();
         }
         else {
             x = getRandomInt(1,26);
