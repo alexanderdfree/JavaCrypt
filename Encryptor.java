@@ -17,10 +17,10 @@ public class Encryptor
         System.out.print("Which message would you like to encrypt? ");
         String plaintext = scanXD.nextLine();
         System.out.print("Would you like to choose your own key? ");
-        boolean pseudobool = true;
-        pseudobool = scanXD.nextBoolean();
+        String pseudobool = null;
+        pseudobool = scanXD.nextLine();
         double x;
-        if (pseudobool == true) {
+        if (pseudobool == "Yes" || pseudobool == "yes") {
             System.out.print("How many letters do you want to shift? ");
             x = scanXD.nextDouble();
         }
