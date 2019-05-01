@@ -46,6 +46,7 @@ public class Encryptor
                 xd = (char)(xd + x);
                 cipher += xd;
             }
+            
             else {
                cipher += xd; 
             }
