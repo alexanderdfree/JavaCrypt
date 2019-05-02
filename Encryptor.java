@@ -66,6 +66,7 @@ public class Encryptor
                cipher += xd; 
             }
             gamerz = cipher;
+            //since it didnt work earlier
         }
         //please work
         System.out.println("Your encrypted text is: " + gamerz + ".");
