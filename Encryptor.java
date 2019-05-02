@@ -48,12 +48,18 @@ public class Encryptor
                 //int z = (int)xd-(int)'a'+ 1;
                 //char nowThatsHowGamersDoIt = (char)z;
                 z = (char)(xd+x);
+                if (z > 'Z') {
+                    z = (char)(z - (int)'z'+1);
+                }
                 cipher += z;//nowThatsHowGamersDoIt;
             }
             if (xd <= 'Z' && xd >= 'A'){
                 //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
                 //char gamer = (char)gamersRiseUpInTheClub;
                 z = (char)(xd+x);
+                if (z > 'Z') {
+                    z = (char)(z - (int)'Z'+1);
+                }
                 cipher += z; //gamer;
             }
             else {
