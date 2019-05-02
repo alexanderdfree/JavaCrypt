@@ -40,18 +40,21 @@ public class Encryptor
         System.out.println("Your code shift is +" + x + ", or -" + y + ".");
         String cipher;
         String gamerz = "";
+        char z;
         for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
             char xd = plaintext.charAt(riseUp);
             cipher = ""; //initializes cipher
             if (xd <= 'z' && xd >= 'a') {
-                int z = (int)xd-'a'+1;
-                char nowThatsHowGamersDoIt = (char)z;
-                cipher += nowThatsHowGamersDoIt;
+                //int z = (int)xd-(int)'a'+ 1;
+                //char nowThatsHowGamersDoIt = (char)z;
+                z = (char)(xd+x);
+                cipher += z;//nowThatsHowGamersDoIt;
             }
             if (xd <= 'Z' && xd >= 'A'){
-                int gamersRiseUpInTheClub = (int)xd-'A'+1;
-                char gamer = (char)gamersRiseUpInTheClub;
-                cipher += gamer;
+                //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
+                //char gamer = (char)gamersRiseUpInTheClub;
+                z = (char)(xd+x);
+                cipher += z; //gamer;
             }
             else {
                cipher += xd; 
