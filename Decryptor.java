@@ -19,7 +19,7 @@ public class Decryptor
         String plaintext = "";
         int x = scanXD2.nextInt();
         String gamerz = "";
-        for (int riseUp = 0; riseUp < ciphertext.length(); riseUp++) {
+        for (int riseUp = 0; riseUp < ciphertext.length()+1; riseUp++) {
             char xd = ciphertext.charAt(riseUp);
             ciphertext = ""; //initializes cipher
             if (xd <= 'z' && xd >= 'a') {
@@ -31,7 +31,7 @@ public class Decryptor
                 }
                 plaintext += z;//nowThatsHowGamersDoIt;
             }
-            if (xd <= 'Z' && xd >= 'A'){
+            else if (xd <= 'Z' && xd >= 'A'){
                 //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
                 //char gamer = (char)gamersRiseUpInTheClub;
                 z = (char)(xd-x);
@@ -46,7 +46,7 @@ public class Decryptor
             gamerz = plaintext;
         }
         //please work
-        System.out.println("Your decrypted text is: " + gamerz + ".");
+        System.out.println("Your decrypted text is: " + plaintext/*gamerz*/ + ".");
     }
 
 }
