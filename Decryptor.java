@@ -11,7 +11,7 @@ public class Decryptor
     public Decryptor()
     {
         Scanner scanXD = new Scanner(System.in);
-        System.out.print("Which message would you like to decrypt? ");
+        System.out.print("What message would you like to decrypt? ");
         String ciphertext = scanXD.nextLine();
         System.out.print("What is the key for the cipher? ");
         Scanner scanXD2 = new Scanner(System.in);
@@ -25,18 +25,18 @@ public class Decryptor
             if (xd <= 'z' && xd >= 'a') {
                 //int z = (int)xd-(int)'a'+ 1;
                 //char nowThatsHowGamersDoIt = (char)z;
-                z = (char)(xd+x);
-                if (z > 'Z') {
-                    z = (char)(z - 1 +'a' + 'z');
+                z = (char)(xd-x);
+                if (z < 'a') {
+                    z = (char)(z + 1 -'a'+ 'z');
                 }
                 plaintext += z;//nowThatsHowGamersDoIt;
             }
             if (xd <= 'Z' && xd >= 'A'){
                 //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
                 //char gamer = (char)gamersRiseUpInTheClub;
-                z = (char)(xd+x);
-                if (z > 'Z') {
-                    z = (char)(z - 1 +'A' + 'Z');
+                z = (char)(xd-x);
+                if (z < 'A') {
+                    z = (char)(z + 1 -'A'+ 'Z');
                 }
                 plaintext += z; //gamer;
             }
@@ -46,7 +46,7 @@ public class Decryptor
             gamerz = plaintext;
         }
         //please work
-        System.out.println("Your encrypted text is: " + gamerz + ".");
+        System.out.println("Your decrypted text is: " + gamerz + ".");
     }
 
 }
