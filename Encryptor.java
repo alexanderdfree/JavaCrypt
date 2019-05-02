@@ -46,12 +46,12 @@ public class Encryptor
             if (xd <= 'z' && xd >= 'a') {
                 int z = (int)xd-'a'+1;
                 char nowThatsHowGamersDoIt = (char)z;
-                cipher += z;
+                cipher += nowThatsHowGamersDoIt;
             }
             if (xd <= 'Z' && xd >= 'A'){
                 int gamersRiseUpInTheClub = (int)xd-'A'+1;
                 char gamer = (char)gamersRiseUpInTheClub;
-                cipher += gamersRiseUpInTheClub;
+                cipher += gamer;
             }
             else {
                cipher += xd; 
