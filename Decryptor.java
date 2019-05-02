@@ -36,7 +36,7 @@ public class Decryptor
                 //char gamer = (char)gamersRiseUpInTheClub;
                 z = (char)(xd-x);
                 if (z < 'A') {
-                    z = (char)(z + 1 -'A'+ 'Z');
+                    z = (char)(z + 1 - 'A'+ 'Z');
                 }
                 plaintext += z; //gamer;
             }

@@ -48,8 +48,8 @@ public class Encryptor
                 //int z = (int)xd-(int)'a'+ 1;
                 //char nowThatsHowGamersDoIt = (char)z;
                 z = (char)(xd+x);
-                if (z > 'Z') {
-                    z = (char)(z - 1 +'a' + 'z');
+                if ((int)z > (int)'z') {
+                    z = (char)('a'+ (z % 26));
                 }
                 cipher += z;//nowThatsHowGamersDoIt;
             }
@@ -57,8 +57,8 @@ public class Encryptor
                 //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
                 //char gamer = (char)gamersRiseUpInTheClub;
                 z = (char)(xd+x);
-                if (z > 'Z') {
-                    z = (char)(z - 1 +'A' + 'Z');
+                if ((int)z > (int)'Z') {
+                    z = (char)('A'+ (z % 26));
                 }
                 cipher += z; //gamer;
             }
@@ -67,7 +67,7 @@ public class Encryptor
             }
             gamerz = cipher;
         }
-        //please workxk
+        //please work
         System.out.println("Your encrypted text is: " + gamerz + ".");
     }
 
