@@ -47,18 +47,18 @@ public class Encryptor
             if (xd <= 'z' && xd >= 'a') {
                 //int z = (int)xd-(int)'a'+ 1;
                 //char nowThatsHowGamersDoIt = (char)z;
-                z = (char)(xd+x);
+                z = (char)((int)xd+x);
                 if ((int)z > (int)'z') {
-                    z = (char)('a'+ (z % 26));
+                    z = (char)((int)'a'+ (z % 26));
                 }
                 cipher += z;//nowThatsHowGamersDoIt;
             }
             if (xd <= 'Z' && xd >= 'A'){
                 //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
                 //char gamer = (char)gamersRiseUpInTheClub;
-                z = (char)(xd+x);
+                z = (char)((int)xd+x);
                 if ((int)z > (int)'Z') {
-                    z = (char)('A'+ (z % 26));
+                    z = (char)((int)'A'+ (z % 26));
                 }
                 cipher += z; //gamer;
             }
