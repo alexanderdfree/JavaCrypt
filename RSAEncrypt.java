@@ -1,11 +1,12 @@
 import java.util.Random;
+import java.util.Scanner;
 /**
  * Write a description of class RSAEncrypt here.
  *
  * @author Alex
  * @version 0
  */
-public class RSAEncrypt
+public class RSAEncrypt extends primeCheck
 {
     public boolean primeCheck(double y)
     {
@@ -49,7 +50,10 @@ public boolean coPrime(double x, double y) {
     }
     else{return false;}
 }
-    public String RSAEncrypt(String plaintext) {
+    public RSAEncrypt() {
+        Scanner scanXD = new Scanner(System.in);
+        System.out.print("Which message would you like to encrypt? ");
+        String plaintext = scanXD.nextLine();
         String codetext = "";
         double p = getRandomInt(1,5000);
         double q = getRandomInt(1,5000);
@@ -59,15 +63,15 @@ public boolean coPrime(double x, double y) {
         }
         double n = p * q;
         double lambda = lcm(p-1,q-1);
-        System.out.println("Your \"n\" is " + n + " .");
-        System.out.println("Your \"lambda\" is " + lambda + " . Keep this secret.");
+        System.out.println("Your \"n\" is " + n + ".");
+        System.out.println("Your \"lambda\" is " + lambda + ". Keep this secret.");
         double e = getRandomInt(2,lambda-1);
         while (coPrime(e,lambda) != true)
         {
             e = getRandomInt(2,lambda-1);
         }
-        System.out.println("Your \"e\" is " + e + " .");
-        return codetext;
+        System.out.println("Your \"e\" is " + e + ".");
+        System.out.println(codetext);
     }}
 
 
