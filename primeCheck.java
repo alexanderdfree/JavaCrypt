@@ -7,10 +7,15 @@
  */
 public class primeCheck
 {
-    public int sampleMethod(int y)
+    public boolean primeCheck(int y)
     {
-        // put your code here
-        //return x + y;
-        return 0;
+        int number = 2;
+        while (number < y) {
+            if (y % number == 0) {
+                return false;
+            }
+            number++;
+        }
+        return true;
     }
 }
