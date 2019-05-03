@@ -74,12 +74,13 @@ public boolean coPrime(double x, double y) {
             e = getRandomInt(2,lambda-1);
         }
         System.out.println("Your \"e\" is " + e + ".");
+        String space = " ";
         for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
             char currentChar = plaintext.charAt(riseUp);
             codeTemp =  (Math.pow((int)currentChar,e))%n;
             furtherTemp = (char)((Math.pow((int)currentChar,e))%n);
             System.out.println(codeTemp);
-            codetext += codeTemp;
+            codetext += space += codeTemp;
         }
         System.out.println(codetext);
     }}
