@@ -32,16 +32,33 @@ double lcm(double a, double b)
     return (a * b) / gcf(a, b);
     
 }
-    public String RSAEncrypt(String plaintext) {
-        double p = getRandomInt(1,500);
-        double q = getRandomInt(1,500);
-        while (primeCheck(p) == false || primeCheck(q) == false) {
-            p = getRandomInt(1,500);
-            q = getRandomInt(1,500);
-        }
-        return "";
+public boolean coPrime(double x, double y) {
+    if (gcd(x,y) == 0) {
+        return true;
     }
+    else{return false;}
 }
+    public String RSAEncrypt(String plaintext) {
+        double p = getRandomInt(1,5000);
+        double q = getRandomInt(1,5000);
+        while (primeCheck(p) == false || primeCheck(q) == false) {
+            p = getRandomInt(1,5000);
+            q = getRandomInt(1,5000);
+        }
+        double n = p * q;
+        double lambda = lcm(p-1,q-1);
+        System.out.println("Your \"n\" is " + n + " .");
+        System.out.println("Your \"lambda\" is " + lambda + " . Keep this secret.");
+        double e = getRandomInt(2,lamda-1);
+        while (relativelyPrime(e,lambda) != true)
+        {
+            e = getRandomInt(2,lamda-1);
+        }
+        System.out.println("Your \"e\" is " + e + " .");
+        return "";
+    }}
+
+
     
     /*String RSAEncrypt()
     {
