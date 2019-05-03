@@ -2,11 +2,22 @@ import java.util.Random;
 /**
  * Write a description of class RSAEncrypt here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alex
+ * @version 0
  */
 public class RSAEncrypt
 {
+    public boolean primeCheck(double y)
+    {
+        int number = 2;
+        while (number < y) {
+            if (y % number == 0) {
+                return false;
+            }
+            number++;
+        }
+        return true;
+    }
     public double getRandomInt(double min, double max) { //code credit to mozilla and edited by alex
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -33,12 +44,13 @@ double lcm(double a, double b)
     
 }
 public boolean coPrime(double x, double y) {
-    if (gcd(x,y) == 0) {
+    if (gcf(x,y) == 0) {
         return true;
     }
     else{return false;}
 }
     public String RSAEncrypt(String plaintext) {
+        String codetext = "";
         double p = getRandomInt(1,5000);
         double q = getRandomInt(1,5000);
         while (primeCheck(p) == false || primeCheck(q) == false) {
@@ -49,13 +61,13 @@ public boolean coPrime(double x, double y) {
         double lambda = lcm(p-1,q-1);
         System.out.println("Your \"n\" is " + n + " .");
         System.out.println("Your \"lambda\" is " + lambda + " . Keep this secret.");
-        double e = getRandomInt(2,lamda-1);
-        while (relativelyPrime(e,lambda) != true)
+        double e = getRandomInt(2,lambda-1);
+        while (coPrime(e,lambda) != true)
         {
-            e = getRandomInt(2,lamda-1);
+            e = getRandomInt(2,lambda-1);
         }
         System.out.println("Your \"e\" is " + e + " .");
-        return "";
+        return codetext;
     }}
 
 
