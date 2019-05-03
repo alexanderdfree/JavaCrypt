@@ -49,7 +49,8 @@ public class Encryptor extends Cipher
                 //char nowThatsHowGamersDoIt = (char)z;
                 z = (char)((int)xd+x);
                 if ((int)z > (int)'z') {
-                    z = (char)((int)'a'+ (z % 26));
+                    int ohYeahYeah = 97 + (z%26);
+                    z = (char)ohYeahYeah;
                 }
                 cipher += z;//nowThatsHowGamersDoIt;
             }
@@ -58,7 +59,8 @@ public class Encryptor extends Cipher
                 //char gamer = (char)gamersRiseUpInTheClub;
                 z = (char)((int)xd+x);
                 if ((int)z > (int)'Z') {
-                    z = (char)((int)'A'+ (z % 26));
+                    int reee = 65+(z % 26);
+                    z = (char)reee;
                 }
                 cipher += z; //gamer;
             }
