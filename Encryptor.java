@@ -4,7 +4,7 @@ import java.util.Scanner;
  * @author Alex
  * @version 12.0.1
  */
-public class Encryptor
+public class Encryptor extends Cipher
 {
     public double getRandomInt(double min, double max) { //code credit to mozilla and edited by alex
         min = Math.ceil(min);

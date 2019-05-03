@@ -6,7 +6,7 @@
  */
 import java.util.Scanner;
 
-public class Decryptor
+public class Decryptor extends Cipher
 {
     public Decryptor()
     {
