@@ -66,6 +66,7 @@ public boolean coPrime(double x, double y) {
         double n = p * q;
         double lambda = lcm(p-1,q-1);
         System.out.println("Your \"n\" is " + n + ".");
+        //
         System.out.println("Your \"lambda\" is " + lambda + ". Keep this secret.");
         double e = getRandomInt(2,lambda-1);
         char furtherTemp;
