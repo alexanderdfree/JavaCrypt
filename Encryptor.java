@@ -6,6 +6,8 @@ import java.util.Scanner;
  */
 public class Encryptor extends Cipher
 {
+    private int key;
+    
     public double getRandomInt(double min, double max) { //code credit to mozilla and edited by alex
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -19,16 +21,16 @@ public class Encryptor extends Cipher
         System.out.print("Would you like to choose your own key? ");
         String pseudobool = null;
         Scanner scanXD2 = new Scanner(System.in);
-        pseudobool = scanXD2.nextLine();
+        pseudobool = scanXD2.nextLine(); // toLower
         double x;
         boolean bool2;
-        if (pseudobool == "Yes" || pseudobool == "yes") { //
+        if (pseudobool == "Yes" || pseudobool == "yes") { // then you can just done one check here
             bool2 = true;
         }
         else{
             bool2 = false;
         }
-        if (bool2 = true) {    
+        if (bool2 == true) {    
             System.out.print("How many letters do you want to shift? ");
             Scanner scanXD3 = new Scanner(System.in);
             x = scanXD3.nextDouble();
@@ -38,40 +40,35 @@ public class Encryptor extends Cipher
         }
         double y = 26 - x;
         System.out.println("Your code shift is +" + x + ", or -" + y + ".");
-        String cipher;
+        String cipher = "";
         String gamerz = "";
+        key = (int) x;
         char z;
+        int offset = 65;
         for (int riseUp = 0; riseUp < plaintext.length(); riseUp++) {
             char xd = plaintext.charAt(riseUp);
-            cipher = ""; //initializes cipher
             if (xd <= 'z' && xd >= 'a') {
-                //int z = (int)xd-(int)'a'+ 1;
-                //char nowThatsHowGamersDoIt = (char)z;
-                z = (char)((int)xd+x);
-                if ((int)z > (int)'z') {
-                    int ohYeahYeah = 97 + (z%26);
-                    z = (char)ohYeahYeah;
-                }
-                cipher += z;//nowThatsHowGamersDoIt;
+                gamerz += encodeWithOffset( xd, 97 );
+            } else if (xd <= 'Z' && xd >= 'A'){ 
+                gamerz += encodeWithOffset( xd, 65 );
+            } else {
+                gamerz += xd; 
             }
-            if (xd <= 'Z' && xd >= 'A'){
-                //int gamersRiseUpInTheClub = (int)xd-(int)'A'+ 1;
-                //char gamer = (char)gamersRiseUpInTheClub;
-                z = (char)((int)xd+x);
-                if ((int)z > (int)'Z') {
-                    int reee = 65+(z % 26);
-                    z = (char)reee;
-                }
-                cipher += z; //gamer;
-            }
-            else {
-               cipher += xd; 
-            }
-            gamerz = cipher;
+            //int z = (int)xd-(int)'a'+ 1;
+            //char nowThatsHowGamersDoIt = (char)z;
             //since it didnt work earlier
         }
         //please work
         System.out.println("Your encrypted text is: " + gamerz + ".");
+    }
+    
+    private char encodeWithOffset( char xd, int offset ) {
+        char z = (char)((int)xd+key);
+        if ((int)z > (int)'z') {
+            int ohYeahYeah = offset + (z%26);
+            z = (char)ohYeahYeah;
+        }    
+        return z;
     }
 
 }
