@@ -25,19 +25,15 @@ public class Encryptor extends Cipher
         double x;
         boolean bool2;
         if (pseudobool == "Yes" || pseudobool == "yes") { // then you can just done one check here
-            bool2 = true;
-        }
-        else{
-            bool2 = false;
-        }
-        if (bool2 == true) {    
             System.out.print("How many letters do you want to shift? ");
             Scanner scanXD3 = new Scanner(System.in);
             x = scanXD3.nextDouble();
         }
-        else {
+        
+        else{
             x = getRandomInt(1,25);
         }
+
         double y = 26 - x;
         System.out.println("Your code shift is +" + x + ", or -" + y + ".");
         String cipher = "";
